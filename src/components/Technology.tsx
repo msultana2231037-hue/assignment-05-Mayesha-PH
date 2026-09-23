@@ -14,7 +14,7 @@ function Technology() {
     const fetchTechnologies = async () => {
       try {
         const res = await fetch(
-          "https://raw.githubusercontent.com/tarek-hossain-rifat/assignment-05-PH-Tarek/refs/heads/main/technologies.json",
+          "https://raw.githubusercontent.com/msultana2231037-hue/assignment-05-Mayesha-PH/refs/heads/main/tech.json",
         );
 
         const data: TechnologyType[] = await res.json();
