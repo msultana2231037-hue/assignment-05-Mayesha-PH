@@ -6,10 +6,8 @@ function Footer() {
     <footer className="border-t border-gray-100 bg-white">
       <div className="mx-auto max-w-[1070px] px-6 py-10 md:px-0">
 
-        {/* Footer main content */}
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
-
-          {/* Logo and description */}
+          
           <div className="max-w-85">
             <img
               src={logo}
