@@ -4,7 +4,7 @@ A responsive web application built with **React, TypeScript, and Tailwind CSS** 
 
 ## 🔗 Live Website
 
-**Live Demo:** [Add your deployed link here]
+**Live Demo:** [https://assignment-05-mayesha-ph.vercel.app/]
 
 ---
 

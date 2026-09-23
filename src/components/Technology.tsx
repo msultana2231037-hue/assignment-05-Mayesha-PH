@@ -1,75 +1,75 @@
+
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-import YourStackCard from "./YourStackCard";
 import TechnologyCard from "./TechnologyCard";
+import YourStackCard from "./YourStackCard";
 import type { TechnologyType } from "../type";
 
 function Technology() {
-  const [technologies, setTechnologies] = useState<TechnologyType[]>([]);
-  const [stack, setStack] = useState<TechnologyType[]>([]);
+  const [technologyList, setTechnologyList] = useState<TechnologyType[]>([]);
+  const [selectedStack, setSelectedStack] = useState<TechnologyType[]>([]);
 
-  // Fetch technologies
+  // Load technology data
   useEffect(() => {
-    const fetchTechnologies = async () => {
+    const loadTechnologies = async () => {
       try {
-        const res = await fetch(
-          "https://raw.githubusercontent.com/msultana2231037-hue/assignment-05-Mayesha-PH/refs/heads/main/tech.json",
+        const response = await fetch(
+          "https://raw.githubusercontent.com/msultana2231037-hue/assignment-05-Mayesha-PH/refs/heads/main/tech.json"
         );
 
-        const data: TechnologyType[] = await res.json();
+        const technologies: TechnologyType[] = await response.json();
 
-        setTechnologies(data);
+        setTechnologyList(technologies);
       } catch (error) {
-        console.error("Failed to fetch technologies:", error);
-        toast.error("Failed to load technologies!");
+        console.error("Unable to load technology data:", error);
+        toast.error("Could not load technologies!");
       }
     };
 
-    fetchTechnologies();
+    loadTechnologies();
   }, []);
 
-  // Add technology
-  const handleAddToStack = (technology: TechnologyType) => {
-    // Prevent duplicate technology
-    const alreadyAdded = stack.some(
-      (item) => item.id === technology.id,
+  // Add a technology to the stack
+  const addTechnology = (technology: TechnologyType) => {
+    const exists = selectedStack.some(
+      (selected) => selected.id === technology.id
     );
 
-    if (alreadyAdded) {
-      toast.warning(`${technology.name} is already in your stack!`);
+    if (exists) {
+      toast.warning(`${technology.name} is already added!`);
       return;
     }
 
-    setStack((previousStack) => [...previousStack, technology]);
+    setSelectedStack((currentStack) => [...currentStack, technology]);
 
-    toast.success(`${technology.name} added to your stack!`);
+    toast.success(`${technology.name} added successfully!`);
   };
 
-  // Remove one technology
-  const handleRemoveFromStack = (id: number) => {
-    const technologyToRemove = stack.find(
-      (technology) => technology.id === id,
+  // Remove a single technology
+  const removeTechnology = (technologyId: number) => {
+    const removedItem = selectedStack.find(
+      (technology) => technology.id === technologyId
     );
 
-    setStack((previousStack) =>
-      previousStack.filter((technology) => technology.id !== id),
+    setSelectedStack((currentStack) =>
+      currentStack.filter((technology) => technology.id !== technologyId)
     );
 
-    if (technologyToRemove) {
-      toast.info(`${technologyToRemove.name} removed from your stack!`);
+    if (removedItem) {
+      toast.info(`${removedItem.name} removed from your stack!`);
     }
   };
 
-  // Remove all technologies
-  const handleRemoveAll = () => {
-    if (stack.length === 0) {
+  // Clear the complete stack
+  const clearStack = () => {
+    if (!selectedStack.length) {
       return;
     }
 
-    setStack([]);
+    setSelectedStack([]);
 
-    toast.info("All technologies removed from your stack!");
+    toast.info("Your complete stack has been cleared!");
   };
 
   return (
@@ -88,30 +88,30 @@ function Technology() {
       </div>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
-        {/* Technology Cards - 3/4 */}
+        {/* Available technologies */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:col-span-3">
-          {technologies.map((technology) => {
-            const isAdded = stack.some(
-              (item) => item.id === technology.id,
+          {technologyList.map((technology) => {
+            const selected = selectedStack.some(
+              (item) => item.id === technology.id
             );
 
             return (
               <TechnologyCard
                 key={technology.id}
                 technology={technology}
-                isAdded={isAdded}
-                onAdd={handleAddToStack}
+                isAdded={selected}
+                onAdd={addTechnology}
               />
             );
           })}
         </div>
 
-        {/* Your Stack - 1/4 */}
+        {/* Selected technology stack */}
         <div className="lg:col-span-1">
           <YourStackCard
-            stack={stack}
-            onRemove={handleRemoveFromStack}
-            onRemoveAll={handleRemoveAll}
+            stack={selectedStack}
+            onRemove={removeTechnology}
+            onRemoveAll={clearStack}
           />
         </div>
       </div>
