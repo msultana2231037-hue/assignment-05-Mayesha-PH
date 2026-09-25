@@ -4,9 +4,8 @@ import heroImage from "../assets/img/banner-stack.png";
 function Hero() {
   return (
     <section className="w-full">
-      <div className="mx-auto flex min-h-[calc(100vh-64px)] max-w-6xl flex-col items-center px-5 py-11 md:flex-row lg:px-0">
+      <div className="mx-auto flex min-h-[calc(100vh-64px)] max-w-6xl flex-col items-center px-5 py-12 md:flex-row ">
 
-        {/* Hero text area */}
         <div className="w-full md:w-1/2">
           <h1 className="text-center text-4xl font-extrabold leading-tight text-[#0f172a] sm:text-5xl md:text-left lg:text-[44px]">
             Build Your Ideal
@@ -16,13 +15,13 @@ function Hero() {
             </span>
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-center text-sm leading-6 text-[#64748b] md:mx-0 md:text-left md:text-[14px]">
+          <p className=" mt-5  text-center text-sm leading-6 text-[#64748b] md:text-left md:text-[14px]">
             Discover frontend, backend, database, and development tools,
             compare your options, and create a stack that matches your next
             project.
           </p>
 
-          {/* Hero actions */}
+        
           <div className="mt-8 flex items-center justify-center gap-3 md:justify-start">
             <button
               type="button"
@@ -40,12 +39,11 @@ function Hero() {
           </div>
         </div>
 
-        {/* Hero illustration */}
         <div className="mt-10 flex w-full items-center justify-center md:mt-0 md:w-1/2">
           <img
             src={heroImage}
             alt="Development stack illustration"
-            className="w-75 translate-x-0 object-contain sm:w-82.5 md:w-82.5 md:translate-x-7 lg:w-90"
+            className="w-75  md:w-82.5 "
           />
         </div>
 

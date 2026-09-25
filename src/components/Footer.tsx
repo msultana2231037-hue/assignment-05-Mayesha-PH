@@ -20,7 +20,7 @@ function Footer() {
               modern applications.
             </p>
 
-            {/* Social media */}
+           
             <div className="mt-5 flex gap-5 text-[12px] font-medium text-gray-600">
               <a href="#" className="transition hover:text-gray-900">
                 GitHub
@@ -36,14 +36,13 @@ function Footer() {
             </div>
           </div>
 
-          {/* Footer navigation */}
-          <div className="grid grid-cols-2 gap-12 sm:grid-cols-3 md:gap-20">
+    <div className="grid grid-cols-2 gap-12 sm:grid-cols-3 md:gap-20">
 
-            {/* Product links */}
-            <div>
-              <h3 className="text-[11px] font-semibold uppercase tracking-wide text-gray-800">
-                Product
-              </h3>
+        
+   <div>
+      <h3 className="text-[11px] font-semibold uppercase tracking-wide text-gray-800">
+          Product
+        </h3>
 
               <nav className="mt-4 flex flex-col gap-2.5">
                 <a
@@ -69,8 +68,8 @@ function Footer() {
               </nav>
             </div>
 
-            {/* Company links */}
-            <div>
+         
+          <div>
               <h3 className="text-[11px] font-semibold uppercase tracking-wide text-gray-800">
                 Company
               </h3>
@@ -83,23 +82,18 @@ function Footer() {
                   About
                 </a>
 
-                <a
-                  href="#"
-                  className="text-[12px] text-gray-400 hover:text-gray-700"
-                >
+                <a href="#"
+                className="text-[12px] text-gray-400 hover:text-gray-700">
                   Contact
                 </a>
 
-                <a
-                  href="#"
-                  className="text-[12px] text-gray-400 hover:text-gray-700"
-                >
+                <a href="#" className="text-[12px] text-gray-400 hover:text-gray-700">
                   Careers
                 </a>
               </nav>
             </div>
 
-            {/* Legal links */}
+          
             <div>
               <h3 className="text-[11px] font-semibold uppercase tracking-wide text-gray-800">
                 Legal
@@ -121,10 +115,10 @@ function Footer() {
                 </a>
               </nav>
             </div>
-          </div>
-        </div>
+            </div>
+            </div>
 
-        {/* Copyright area */}
+        
         <div className="mt-10 flex flex-col gap-4 border-t border-gray-100 pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-[11px] text-gray-400">
             © 2026 Dev Stack. All rights reserved.

@@ -14,7 +14,7 @@ function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white">
       <nav className="mx-auto max-w-6xl px-5 lg:px-0">
 
-        {/* Mobile navigation */}
+       
         <div className="relative flex h-16 items-center justify-between md:hidden">
           <button
             type="button"
@@ -47,7 +47,7 @@ function Navbar() {
           </div>
         </div>
 
-        {/* Desktop navigation */}
+      
         <div className="hidden h-16 items-center justify-between md:flex">
           <a href="/" className="flex items-center gap-2">
             <img src={logo} alt="Dev Stack logo" />
@@ -102,8 +102,7 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu */}
-      {menuVisible && (
+       {menuVisible && (
         <div className="border-t border-gray-100 bg-white px-5 py-5 md:hidden">
           <div className="flex flex-col gap-5">
             <a
@@ -141,14 +140,14 @@ function Navbar() {
             <a
               href="#"
               onClick={closeMenu}
-              className="text-[14px] font-medium text-[#475569] hover:text-pink-500"
+            className="text-[14px] font-medium text-[#475569] hover:text-pink-500"
             >
               Contact
             </a>
           </div>
         </div>
       )}
-    </header>
+      </header>
   );
 }
 
