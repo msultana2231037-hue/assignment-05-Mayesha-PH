@@ -12,7 +12,7 @@ function Footer() {
             <img
               src={logo}
               alt="Dev Stack logo"
-              className="h-7 w-auto"
+              className="h-8 w-auto"
             />
 
             <p className="mt-3 text-[12px] leading-5 text-gray-400">
