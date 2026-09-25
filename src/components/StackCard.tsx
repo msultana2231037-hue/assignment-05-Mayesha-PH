@@ -15,7 +15,7 @@ function StackCard({
   const totalItems = stack.length;
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md">
       <h2 className="text-sm font-bold text-slate-800">Your Stack</h2>
 
       <p className="mt-1 text-[10px] text-slate-400">
