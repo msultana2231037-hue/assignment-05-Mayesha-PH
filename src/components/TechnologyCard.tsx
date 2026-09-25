@@ -11,9 +11,8 @@ function TechnologyCard({ technology, isAdded, onAdd }: CardProps) {
   const buttonText = isAdded ? "Added to Stack" : "Add to Stack";
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+    <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md">
 
-      {/* Technology header */}
       <div className="flex items-start justify-between">
         <img
           src={technology.icon}
@@ -34,7 +33,7 @@ function TechnologyCard({ technology, isAdded, onAdd }: CardProps) {
         {technology.description}
       </p>
 
-      {/* Technology details */}
+  
       <div className="mt-3 flex items-center justify-between text-[9px]">
         <span className="rounded bg-slate-50 px-2 py-1 text-slate-500">
           {technology.category}

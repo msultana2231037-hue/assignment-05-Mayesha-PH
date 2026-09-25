@@ -4,11 +4,11 @@ import logo from "../assets/img/logo-text.png";
 function Footer() {
   return (
     <footer className="border-t border-gray-100 bg-white">
-      <div className="mx-auto max-w-[1070px] px-6 py-10 md:px-0">
+      <div className="mx-auto max-w-6xl px-6 py-10 md:px-0">
 
         <div className="flex flex-col gap-10 md:flex-row md:justify-between">
           
-          <div className="max-w-85">
+          <div className="max-w-sm">
             <img
               src={logo}
               alt="Dev Stack logo"
