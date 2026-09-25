@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 import TechnologyCard from "./TechnologyCard";
-import YourStackCard from "./YourStackCard";
+import StackCard from "./StackCard";
 import type { TechnologyType } from "../type";
 
 function Technology() {
   const [technologyList, setTechnologyList] = useState<TechnologyType[]>([]);
   const [selectedStack, setSelectedStack] = useState<TechnologyType[]>([]);
 
-  // Load technology data
+  
   useEffect(() => {
     const loadTechnologies = async () => {
       try {
@@ -30,7 +30,7 @@ function Technology() {
     loadTechnologies();
   }, []);
 
-  // Add a technology to the stack
+  
   const addTechnology = (technology: TechnologyType) => {
     const exists = selectedStack.some(
       (selected) => selected.id === technology.id
@@ -46,7 +46,7 @@ function Technology() {
     toast.success(`${technology.name} added successfully!`);
   };
 
-  // Remove a single technology
+
   const removeTechnology = (technologyId: number) => {
     const removedItem = selectedStack.find(
       (technology) => technology.id === technologyId
@@ -61,7 +61,6 @@ function Technology() {
     }
   };
 
-  // Clear the complete stack
   const clearStack = () => {
     if (!selectedStack.length) {
       return;
@@ -88,7 +87,7 @@ function Technology() {
       </div>
 
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
-        {/* Available technologies */}
+        
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:col-span-3">
           {technologyList.map((technology) => {
             const selected = selectedStack.some(
@@ -106,9 +105,9 @@ function Technology() {
           })}
         </div>
 
-        {/* Selected technology stack */}
+      
         <div className="lg:col-span-1">
-          <YourStackCard
+          <StackCard
             stack={selectedStack}
             onRemove={removeTechnology}
             onRemoveAll={clearStack}

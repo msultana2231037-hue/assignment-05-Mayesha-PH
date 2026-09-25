@@ -1,17 +1,17 @@
 
 import type { TechnologyType } from "../type";
 
-type YourStackCardProps = {
+type StackCardProps = {
   stack: TechnologyType[];
   onRemove: (id: number) => void;
   onRemoveAll: () => void;
 };
 
-function YourStackCard({
+function StackCard({
   stack,
   onRemove,
   onRemoveAll,
-}: YourStackCardProps) {
+}: StackCardProps) {
   const totalItems = stack.length;
 
   return (
@@ -76,4 +76,4 @@ function YourStackCard({
   );
 }
 
-export default YourStackCard;
+export default StackCard;

@@ -84,7 +84,7 @@ src/
 │   ├── Hero.tsx
 │   ├── Technology.tsx
 │   ├── TechnologyCard.tsx
-│   ├── YourStackCard.tsx
+│   ├── StackCard.tsx
 │   └── Footer.tsx
 │
 ├── type.ts
